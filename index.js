@@ -6,6 +6,7 @@ const app = express()
 const config = require('./utils/config')
 const auth = require('./routes/authRouter')
 const users = require('./routes/userRouter')
+const contacts = require('./routes/contactRouter')
 const notFound = require('./middlewares/not-found')
 
 
@@ -27,6 +28,7 @@ app.use(cors());
 app.use(express.json())
 app.use(bodyParser.json())
 
+
 app.get('/', (req, res) => {
     res.send('Welcome to HNG-Certificate Api')
 });
@@ -34,6 +36,7 @@ app.get('/', (req, res) => {
 //routes
 app.use('/api/auth',auth)
 app.use('/api/users',users)
+app.use('/api/contactus',contacts)
 
 
 app.use((err, req, res, next)=>{
@@ -53,3 +56,6 @@ app.use(notFound)
 app.listen(config.PORT , ()=>{
     console.log(`connected to backend - ${config.PORT}`);
 });
+
+// Export the Express API
+module.exports = app;
