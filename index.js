@@ -56,3 +56,6 @@ app.use(notFound)
 app.listen(config.PORT , ()=>{
     console.log(`connected to backend - ${config.PORT}`);
 });
+
+// Export the Express API
+module.exports = app;t add .
