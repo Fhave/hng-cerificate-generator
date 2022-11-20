@@ -2,9 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
-const config = require('./utils/config.js')
-const auth = require('./routes/authRouter.js')
-const users = require('./routes/userRouter.js')
+const config = require('../utils/config.js')
 const contacts = require('./routes/contactRouter.js')
 const notFound = require('./middlewares/not-found.js')
 
@@ -33,8 +31,6 @@ app.get('/', (req, res) => {
 });
 
 //routes
-app.use('/api/auth',auth)
-app.use('/api/users',users)
 app.use('/api/contactus',contacts)
 
 
