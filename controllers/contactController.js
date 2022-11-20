@@ -49,7 +49,7 @@ const sendContact =  async (req, res) => {
 
     // Mail Options To Website User
     let mailOptions = {
-      from: info@certawi.com, //Sender address
+      from: `${config.AUTH_EMAIL}`, //Sender address
       to: `${req.body.email}`, // Receiver address
       subject: 'Hi From Certawi',
       text: 'Hi from Certawi',
