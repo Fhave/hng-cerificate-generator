@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
-const config = require('../utils/config.js')
+const config = require('./utils/config.js')
 const contacts = require('./routes/contactRouter.js')
 const notFound = require('./middlewares/not-found.js')
 
