@@ -26,7 +26,7 @@ mongoose.connect(config.MONGODB_URL, {
 //middleware
 app.use(cors());
 app.use(express.json())
-app.use(bodyParser.json())
+app.use(express.urlencoded({extended: true}))
 
 
 app.get('/', (req, res) => {
