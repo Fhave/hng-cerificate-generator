@@ -1,7 +1,7 @@
-const Contact = require('../models/contactModel');
+const Contact = require('../models/contactModel.js');
 const dotenv = require('dotenv');
 dotenv.config();
-const config = require('../utils/config')
+const config = require('../utils/config.js')
 const nodemailer = require('nodemailer');
 
 // get all contacts
@@ -49,7 +49,7 @@ const sendContact =  async (req, res) => {
 
     // Mail Options To Website User
     let mailOptions = {
-      from: `${config.AUTH_EMAIL}`, //Sender address
+      from: info@certawi.com, //Sender address
       to: `${req.body.email}`, // Receiver address
       subject: 'Hi From Certawi',
       text: 'Hi from Certawi',
